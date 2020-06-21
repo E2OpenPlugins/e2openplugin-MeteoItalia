@@ -27,9 +27,13 @@ from Components.Label import Label
 from Components.Pixmap import Pixmap
 from Tools.Directories import fileExists
 
-from urllib2 import Request, urlopen, URLError, HTTPError
+from six.moves.urllib.error import URLError, HTTPError
+from six.moves.urllib.request import Request, urlopen
 from xml.dom import minidom, Node
 from enigma import loadPic, eTimer
+
+import six
+
 
 METEOITALIA_ABOUT_TXT = "Meteo Italia Info Plugin v 0.2\n\nAuthor: meo\nGraphics: Army\n Meteo: www.google.it\n"
 
@@ -122,7 +126,7 @@ class meteoitMain(Screen):
         				'forecast_information': ('postal_code', 'current_date_time'),
         				'current_conditions': ('condition', 'temp_c', 'humidity', 'wind_condition', 'icon')
     				}
-    				for (tag, list_of_tags2) in data_structure.iteritems():
+    				for (tag, list_of_tags2) in six.iteritems(data_structure):
         				tmp_conditions = {}
        					for tag2 in list_of_tags2:
             					try: 
