@@ -1,7 +1,7 @@
 from distutils.core import setup, Extension
 
 pkg = 'Extensions.MeteoItalia'
-setup (name='enigma2-plugin-extensions-meteoitalia',
+setup(name='enigma2-plugin-extensions-meteoitalia',
        version='0.1',
        license='GPLv2',
        url='https://github.com/E2OpenPlugins',
